@@ -54,6 +54,7 @@ numpydoc = { version = "^1.1.0", optional = true }
 docs = ["sphinx", "sphinx-autodoc-typehints", "numpydoc"]
 
 [tool.poetry.dev-dependencies]
+pre-commit = "^2.10.0"
 pytest = "^6.2.1"
 pytest-cov = "^2.11.1"
 pytest-instafail = "^0.4.2"
@@ -68,6 +69,7 @@ vulture = "^2.3"
 mypy = "^0.800.0"
 python-language-server = { version = "^0.36.2", extras = ["all"] }
 black = { version = "*", allow-prereleases = true }
+
 
 [tool.black]
 line-length = 79
