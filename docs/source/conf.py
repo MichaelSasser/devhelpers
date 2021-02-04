@@ -40,7 +40,6 @@ extensions: List[str] = [
     "sphinx.ext.autodoc",
     "sphinx.ext.mathjax",
     "sphinx_autodoc_typehints",
-    "sphinx_rtd_theme",
     "sphinx.ext.viewcode",
     "numpydoc",
     "sphinx.ext.autosummary",
