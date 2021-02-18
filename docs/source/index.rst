@@ -1,7 +1,7 @@
 DevTools Documentation
 ======================
 
-DevTools (or `dtools`) is a loose collection of python development helpers.
+DevTools (or ``dtools``) is a loose collection of python development helpers.
 
 .. toctree::
    :maxdepth: 2

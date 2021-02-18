@@ -46,27 +46,30 @@ python = "^3.9"
 
 # Docs
 sphinx-autodoc-typehints = { version = "^1.11.1", optional = true }
-Sphinx = { version = "^3.4.3", optional = true }
+Sphinx = { version = "^3.5.1", optional = true }
 numpydoc = { version = "^1.1.0", optional = true }
+mypy = "^0.800"
+black = "^20.8b1"
 
 [tool.poetry.extras]
 # Docs
 docs = ["sphinx", "sphinx-autodoc-typehints", "numpydoc"]
 
 [tool.poetry.dev-dependencies]
-pre-commit = "^2.10.0"
-pytest = "^6.2.1"
+pre-commit = "^2.10.1"
+pytest = "^6.2.2"
 pytest-cov = "^2.11.1"
 pytest-instafail = "^0.4.2"
-pytest-xdist = { version = "^2.2.0", extras = ["psutil"] }
+pytest-xdist = { version = "^2.2.1", extras = ["psutil"] }
 flake8 = "^3.8.4"
 neovim = "^0.3.1"
 pydocstyle = "^5.1.1"
-pylint = "^2.6"
-pycodestyle = "^2.6"
+pylint = "^2.6.2"
+pycodestyle = "^2.6.0"
 yapf = "^0.30.0"
 vulture = "^2.3"
 mypy = "^0.800.0"
+isort = "^5.7.0"
 python-language-server = { version = "^0.36.2", extras = ["all"] }
 black = { version = "*", allow-prereleases = true }
 
@@ -115,48 +118,11 @@ known_third_party = [
     "sphinx_rtd_theme",
 ]
 
-# [tool.towncrier]
-# package = "ds2000"
-# filename = "CHANGELOG.rst"
-# issue_format = "`#{issue} <https://github.com/MichaelSasser.org/dtools/issues/{issue}>`_"
-# directory = "news/"
-# title_format = "{version} ({project_date})"
-# template = "news/towncrier_template.rst"
-#
-#   [[tool.towncrier.type]]
-#   directory = "feature"
-#   name = "Features & Improvements"
-#   showcontent = true
-#
-#   [[tool.towncrier.type]]
-#   directory = "behavior"
-#   name = "Behavior Changes"
-#   showcontent = true
-#
-#   [[tool.towncrier.type]]
-#   directory = "bugfix"
-#   name = "Bug Fixes"
-#   showcontent = true
-#
-#   [[tool.towncrier.type]]
-#   directory = "vendor"
-#   name = "Vendored Libraries"
-#   showcontent = true
-#
-#   [[tool.towncrier.type]]
-#   directory = "doc"
-#   name = "Improved Documentation"
-#   showcontent = true
-#
-#   [[tool.towncrier.type]]
-#   directory = "trivial"
-#   name = "Trivial Changes"
-#   showcontent = false
-#
-#   [[tool.towncrier.type]]
-#   directory = "removal"
-#   name = "Removals and Deprecations"
-#   showcontent = true
+[tool.vulture]
+make_whitelist = true
+min_confidence = 80
+paths = ["dtools"]
+sort_by_size = true
 
 
 [build-system]

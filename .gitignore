@@ -1,4 +1,5 @@
 !.gitignore
+.vim
 setup.py
 # Created by .ignore support plugin (hsz.mobi)
 ### Emacs template
