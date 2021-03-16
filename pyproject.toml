@@ -24,7 +24,7 @@ maintainers = ["Michael Sasser <Michael@MichaelSasser.org>"]
 readme = "README.md"
 repository = "https://github.com/MichaelSasser/devhelpers"
 homepage = "https://github.com/MichaelSasser/devhelpers"
-documentation = "https://github.com/MichaelSasser/devhelpers"
+documentation = "https://michaelsasser.github.io/devhelpers/index.html"
 keywords = ['devtools', 'development', 'tools']
 # Look here for all Classifiers:
 # https://pypi.python.org/pypi?%3Aaction=list_classifiers
@@ -38,6 +38,9 @@ classifiers = [
     "Programming Language :: Python :: 3.9",
     "Topic :: Software Development",
     "Topic :: Software Development :: Libraries :: Python Modules",
+    "Topic :: Software Development :: Quality Assurance",
+    "Topic :: Software Development :: Testing",
+    "Typing :: Typed",
     "License :: OSI Approved :: GNU General Public License v3 or later (GPLv3+)",
 ]
 
@@ -48,11 +51,8 @@ python = "^3.9"
 sphinx-autodoc-typehints = { version = "^1.11.1", optional = true }
 Sphinx = { version = "^3.5.1", optional = true }
 numpydoc = { version = "^1.1.0", optional = true }
-mypy = "^0.800"
-black = "^20.8b1"
 
 [tool.poetry.extras]
-# Docs
 docs = ["sphinx", "sphinx-autodoc-typehints", "numpydoc"]
 
 [tool.poetry.dev-dependencies]
@@ -66,18 +66,17 @@ neovim = "^0.3.1"
 pydocstyle = "^5.1.1"
 pylint = "^2.6.2"
 pycodestyle = "^2.6.0"
-yapf = "^0.30.0"
+yapf = "^0.31.0"
 vulture = "^2.3"
-mypy = "^0.800.0"
+mypy = "^0.812"
 isort = "^5.7.0"
 python-language-server = { version = "^0.36.2", extras = ["all"] }
-black = { version = "*", allow-prereleases = true }
+black = "^20.8b1"
 
 
 [tool.black]
 line-length = 79
 include = '\.pyi?$'
-# exclude __init__.py because of ordered importing
 exclude = '''
 /(
     \.eggs
@@ -112,10 +111,9 @@ multi_line_output = 3
 use_parentheses = true
 skip_glob = ["*/setup.py", "*.rst", "*.md", "*.yaml", "*.txt", "*.yml", "*.lock", "*.toml", "*.ini", "Makefile"]
 filter_files = true
-known_first_party = "ds2000"
+known_first_party = "devhelpers"
 known_third_party = [
     "pytest",
-    "sphinx_rtd_theme",
 ]
 
 [tool.vulture]
