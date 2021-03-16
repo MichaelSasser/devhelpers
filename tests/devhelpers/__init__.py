@@ -1,6 +1,6 @@
 #!/usr/bin/env python
-# dtools - A Development Toolbox
-# Copyright (c) 2021  Michael Sasser <Michael@MichaelSasser.org>
+# devhelpers - A Development Toolbox
+# Copyright (C) 2021  Michael Sasser <Michael@MichaelSasser.org>
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -14,14 +14,3 @@
 #
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
-from __future__ import annotations
-
-from pkg_resources import get_distribution
-
-
-__author__: str = "Michael Sasser"
-__email__: str = "Michael@MichaelSasser.org"
-
-__version__ = get_distribution("dtools").version
-
-# vim: set ft=python :

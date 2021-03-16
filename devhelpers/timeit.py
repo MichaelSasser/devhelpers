@@ -1,4 +1,4 @@
-# dtools - A Development Toolbox
+# devhelpers - A Development Toolbox
 # Copyright (c) 2021  Michael Sasser <Michael@MichaelSasser.org>
 #
 # This program is free software: you can redistribute it and/or modify
@@ -48,10 +48,10 @@ def timeit(
 
     - when the function/method does not e.g. count, append something
       outside its own namespace, when using the decorator with
-      repeating enabled like `@timeit(100)`.  Or in other words:
+      repeating enabled like ``@timeit(100)``.  Or in other words:
       if the internal state does not change, when you call it
       $ n+1 $ times.
-    - if you don't repeat anything: `@timeit`.
+    - if you don't repeat anything: ``@timeit``.
 
     Examples
     --------

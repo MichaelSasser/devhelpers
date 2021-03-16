@@ -4,7 +4,7 @@ DevTools Documentation
 TimeIt
 ------
 
-.. automodule:: dtools.timeit
+.. automodule:: devhelpers.timeit
    :members:
    :undoc-members:
    :show-inheritance:

@@ -1,9 +1,9 @@
-![GitHub](https://img.shields.io/github/license/MichaelSasser/dtools?style=flat-square)
-![GitHub Workflow Status](https://img.shields.io/github/workflow/status/MichaelSasser/dtools/Build%20and%20Tests?style=flat-square)
+![GitHub](https://img.shields.io/github/license/MichaelSasser/devhelpers?style=flat-square)
+![GitHub Workflow Status](https://img.shields.io/github/workflow/status/MichaelSasser/devhelpers/Build%20and%20Tests?style=flat-square)
 
-# DevTools
+# DevHelpers
 
-DevTools (or `dtools`) is a loose collection of python development helpers.
+DevHelpers is a loose collection of python development helpers.
 It is not made to be included or used in a finished product.
 
 # Toolbox
@@ -22,8 +22,8 @@ This repository uses the
 [git-flow](https://danielkummer.github.io/git-flow-cheatsheet/index.html)
 branching model by [Vincent Driessen](https://nvie.com/about/). It has two branches with infinite lifetime:
 
-* [master](https://github.com/MichaelSasser/dtools/tree/master)
-* [develop](https://github.com/MichaelSasser/dtools/tree/develop)
+* [master](https://github.com/MichaelSasser/devhelpers/tree/master)
+* [develop](https://github.com/MichaelSasser/devhelpers/tree/develop)
 
 The master branch gets updated on every release. The develop branch is the merging branch.
 

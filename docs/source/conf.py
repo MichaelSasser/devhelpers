@@ -24,8 +24,8 @@ sys.path.insert(0, os.path.abspath("../.."))
 
 # -- Project information -----------------------------------------------------
 
-project: str = "dtools"
-copyright: str = "2021, Michael Sasser"  # noqa
+project: str = "devhelpers"
+copyright: str = "2021, Michael Sasser"  # pylint: disable=redefined-builtin
 author: str = "Michael Sasser"
 
 # The full version, including alpha/beta/rc tags
