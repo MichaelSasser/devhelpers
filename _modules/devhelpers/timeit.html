@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>dtools.timeit &#8212; dtools 0.1.0 documentation</title>
+    <title>devhelpers.timeit &#8212; devhelpers 0.1.0 documentation</title>
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/classic.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css" />
@@ -27,9 +27,9 @@
         <li class="right" >
           <a href="../../py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../../index.html">dtools 0.1.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../../index.html">devhelpers 0.1.0 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../index.html" accesskey="U">Module code</a> &#187;</li>
-        <li class="nav-item nav-item-this"><a href="">dtools.timeit</a></li> 
+        <li class="nav-item nav-item-this"><a href="">devhelpers.timeit</a></li> 
       </ul>
     </div>  
 
@@ -38,8 +38,8 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <h1>Source code for dtools.timeit</h1><div class="highlight"><pre>
-<span></span><span class="c1"># dtools - A Development Toolbox</span>
+  <h1>Source code for devhelpers.timeit</h1><div class="highlight"><pre>
+<span></span><span class="c1"># devhelpers - A Development Toolbox</span>
 <span class="c1"># Copyright (c) 2021  Michael Sasser &lt;Michael@MichaelSasser.org&gt;</span>
 <span class="c1">#</span>
 <span class="c1"># This program is free software: you can redistribute it and/or modify</span>
@@ -73,7 +73,7 @@
 <span class="n">ReturnType</span> <span class="o">=</span> <span class="n">TypeVar</span><span class="p">(</span><span class="s2">&quot;ReturnType&quot;</span><span class="p">)</span>
 
 
-<div class="viewcode-block" id="timeit"><a class="viewcode-back" href="../../dtools.html#dtools.timeit.timeit">[docs]</a><span class="k">def</span> <span class="nf">timeit</span><span class="p">(</span>
+<div class="viewcode-block" id="timeit"><a class="viewcode-back" href="../../devhelpers.html#devhelpers.timeit.timeit">[docs]</a><span class="k">def</span> <span class="nf">timeit</span><span class="p">(</span>
     <span class="n">arg</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">Callable</span><span class="p">[</span><span class="o">...</span><span class="p">,</span> <span class="n">ReturnType</span><span class="p">],</span> <span class="nb">int</span><span class="p">]</span>
 <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Callable</span><span class="p">[</span><span class="o">...</span><span class="p">,</span> <span class="n">ReturnType</span><span class="p">]:</span>
     <span class="sd">&quot;&quot;&quot;Use the decorator to time functions in place.</span>
@@ -89,10 +89,10 @@
 
 <span class="sd">    - when the function/method does not e.g. count, append something</span>
 <span class="sd">      outside its own namespace, when using the decorator with</span>
-<span class="sd">      repeating enabled like `@timeit(100)`.  Or in other words:</span>
+<span class="sd">      repeating enabled like ``@timeit(100)``.  Or in other words:</span>
 <span class="sd">      if the internal state does not change, when you call it</span>
 <span class="sd">      $ n+1 $ times.</span>
-<span class="sd">    - if you don&#39;t repeat anything: `@timeit`.</span>
+<span class="sd">    - if you don&#39;t repeat anything: ``@timeit``.</span>
 
 <span class="sd">    Examples</span>
 <span class="sd">    --------</span>
@@ -182,14 +182,14 @@
         <li class="right" >
           <a href="../../py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../../index.html">dtools 0.1.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../../index.html">devhelpers 0.1.0 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../index.html" >Module code</a> &#187;</li>
-        <li class="nav-item nav-item-this"><a href="">dtools.timeit</a></li> 
+        <li class="nav-item nav-item-this"><a href="">devhelpers.timeit</a></li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2021, Michael Sasser.
-      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.4.3.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.5.2.
     </div>
   </body>
 </html>

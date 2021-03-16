@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>DevTools Documentation &#8212; dtools 0.1.0 documentation</title>
+    <title>DevTools Documentation &#8212; devhelpers 0.1.0 documentation</title>
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="_static/classic.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="_static/graphviz.css" />
@@ -31,7 +31,7 @@
         <li class="right" >
           <a href="index.html" title="DevTools Documentation"
              accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">dtools 0.1.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">devhelpers 0.1.0 documentation</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">DevTools Documentation</a></li> 
       </ul>
     </div>  
@@ -43,11 +43,11 @@
             
   <div class="section" id="devtools-documentation">
 <h1>DevTools Documentation<a class="headerlink" href="#devtools-documentation" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="module-dtools.timeit">
-<span id="timeit"></span><h2>TimeIt<a class="headerlink" href="#module-dtools.timeit" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="module-devhelpers.timeit">
+<span id="timeit"></span><h2>TimeIt<a class="headerlink" href="#module-devhelpers.timeit" title="Permalink to this headline">¶</a></h2>
 <dl class="py function">
-<dt id="dtools.timeit.timeit">
-<code class="sig-prename descclassname">dtools.timeit.</code><code class="sig-name descname">timeit</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">arg</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/dtools/timeit.html#timeit"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#dtools.timeit.timeit" title="Permalink to this definition">¶</a></dt>
+<dt id="devhelpers.timeit.timeit">
+<code class="sig-prename descclassname"><span class="pre">devhelpers.timeit.</span></code><code class="sig-name descname"><span class="pre">timeit</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">arg</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/devhelpers/timeit.html#timeit"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#devhelpers.timeit.timeit" title="Permalink to this definition">¶</a></dt>
 <dd><p>Use the decorator to time functions in place.</p>
 <p>One hazard: When you use the decorator with a function/method that does
 change something outside it’s namespace or a method changes anything
@@ -58,10 +58,10 @@ in an unexpected behavior.</p>
 <ul class="simple">
 <li><p>when the function/method does not e.g. count, append something
 outside its own namespace, when using the decorator with
-repeating enabled like <cite>&#64;timeit(100)</cite>.  Or in other words:
+repeating enabled like <code class="docutils literal notranslate"><span class="pre">&#64;timeit(100)</span></code>.  Or in other words:
 if the internal state does not change, when you call it
 $ n+1 $ times.</p></li>
-<li><p>if you don’t repeat anything: <cite>&#64;timeit</cite>.</p></li>
+<li><p>if you don’t repeat anything: <code class="docutils literal notranslate"><span class="pre">&#64;timeit</span></code>.</p></li>
 </ul>
 <p class="rubric">Examples</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nd">@timeit</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
@@ -96,7 +96,7 @@ $ n+1 $ times.</p></li>
   <h3><a href="index.html">Table of Contents</a></h3>
   <ul>
 <li><a class="reference internal" href="#">DevTools Documentation</a><ul>
-<li><a class="reference internal" href="#module-dtools.timeit">TimeIt</a></li>
+<li><a class="reference internal" href="#module-devhelpers.timeit">TimeIt</a></li>
 </ul>
 </li>
 </ul>
@@ -107,7 +107,7 @@ $ n+1 $ times.</p></li>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
-      <li><a href="_sources/dtools.rst.txt"
+      <li><a href="_sources/devhelpers.rst.txt"
             rel="nofollow">Show Source</a></li>
     </ul>
    </div>
@@ -137,13 +137,13 @@ $ n+1 $ times.</p></li>
         <li class="right" >
           <a href="index.html" title="DevTools Documentation"
              >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">dtools 0.1.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">devhelpers 0.1.0 documentation</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">DevTools Documentation</a></li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2021, Michael Sasser.
-      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.4.3.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.5.2.
     </div>
   </body>
 </html>
