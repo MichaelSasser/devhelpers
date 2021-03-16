@@ -1,4 +1,4 @@
-# dtools - A Development Toolbox
+# devhelpers - A Development Toolbox
 # Copyright (c) 2020  Michael Sasser <Michael@MichaelSasser.org>
 #
 # This program is free software: you can redistribute it and/or modify
@@ -62,7 +62,7 @@ jobs:
           # packages_dir: # optional, default is dist
 
       - name: Zip project
-        run: zip --junk-paths dtools.zip  dist/* README.md LICENSE.txt
+        run: zip --junk-paths devhelpers.zip  dist/* README.md LICENSE.txt
 
       - name: Create Release
         id: create_release
@@ -82,6 +82,6 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: ./dtools.zip
-          asset_name: dtools.zip
+          asset_path: ./devhelpers.zip
+          asset_name: devhelpers.zip
           asset_content_type: application/zip

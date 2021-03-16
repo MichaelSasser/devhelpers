@@ -1,4 +1,4 @@
-# dtools - A Development Toolbox
+# devhelpers - A Development Toolbox
 # Copyright (C) 2021  Michael Sasser <Michael@MichaelSasser.org>
 
 # This program is free software: you can redistribute it and/or modify
@@ -15,16 +15,16 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 [tool.poetry]
-name = "dtools"
+name = "devhelpers"
 version = "0.1.0"
 description = "A Development Toolbox"
 license = "GPL-3.0-or-later"
 authors = ["Michael Sasser <Michael@MichaelSasser.org>"]
 maintainers = ["Michael Sasser <Michael@MichaelSasser.org>"]
 readme = "README.md"
-repository = "https://github.com/MichaelSasser/dtools"
-homepage = "https://github.com/MichaelSasser/dtools"
-documentation = "https://github.com/MichaelSasser/dtools"
+repository = "https://github.com/MichaelSasser/devhelpers"
+homepage = "https://github.com/MichaelSasser/devhelpers"
+documentation = "https://github.com/MichaelSasser/devhelpers"
 keywords = ['devtools', 'development', 'tools']
 # Look here for all Classifiers:
 # https://pypi.python.org/pypi?%3Aaction=list_classifiers
@@ -121,7 +121,7 @@ known_third_party = [
 [tool.vulture]
 make_whitelist = true
 min_confidence = 80
-paths = ["dtools"]
+paths = ["devhelpers"]
 sort_by_size = true
 
 

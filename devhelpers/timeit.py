@@ -1,4 +1,4 @@
-# dtools - A Development Toolbox
+# devhelpers - A Development Toolbox
 # Copyright (c) 2021  Michael Sasser <Michael@MichaelSasser.org>
 #
 # This program is free software: you can redistribute it and/or modify

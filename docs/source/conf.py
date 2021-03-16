@@ -24,7 +24,7 @@ sys.path.insert(0, os.path.abspath("../.."))
 
 # -- Project information -----------------------------------------------------
 
-project: str = "dtools"
+project: str = "devhelpers"
 copyright: str = "2021, Michael Sasser"  # pylint: disable=redefined-builtin
 author: str = "Michael Sasser"
 

@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-# dtools - A Development Toolbox
+# devhelpers - A Development Toolbox
 # Copyright (c) 2021  Michael Sasser <Michael@MichaelSasser.org>
 #
 # This program is free software: you can redistribute it and/or modify
@@ -18,7 +18,7 @@ from __future__ import annotations
 
 import re
 
-from dtools.__version__ import __version__
+from devhelpers.__version__ import __version__
 
 
 __author__: str = "Michael Sasser"
