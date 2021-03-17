@@ -84,6 +84,82 @@ $ n+1 $ times.</p></li>
 </dd></dl>
 
 </div>
+<div class="section" id="module-devhelpers.isatomic">
+<span id="isatomic"></span><h2>IsAtomic<a class="headerlink" href="#module-devhelpers.isatomic" title="Permalink to this headline">¶</a></h2>
+<dl class="py exception">
+<dt id="devhelpers.isatomic.NotAtomicError">
+<em class="property"><span class="pre">exception</span> </em><code class="sig-prename descclassname"><span class="pre">devhelpers.isatomic.</span></code><code class="sig-name descname"><span class="pre">NotAtomicError</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">result_1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">result_n</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">iteration</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/devhelpers/isatomic.html#NotAtomicError"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#devhelpers.isatomic.NotAtomicError" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Exception</span></code></p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="devhelpers.isatomic.isatomic">
+<code class="sig-prename descclassname"><span class="pre">devhelpers.isatomic.</span></code><code class="sig-name descname"><span class="pre">isatomic</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">arg</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/devhelpers/isatomic.html#isatomic"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#devhelpers.isatomic.isatomic" title="Permalink to this definition">¶</a></dt>
+<dd><p>Use the decorator to check if a function is atomic.</p>
+<p>The decorator runs a function over and over again and compares the output.
+When the output changes, it raises a <cite>NotAtomicError</cite>.</p>
+<p class="rubric">Examples</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nd">@isatomic</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">foo</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+    <span class="k">pass</span>
+
+<span class="nd">@isatomic</span>
+<span class="k">def</span> <span class="nf">bar</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="n">d</span><span class="p">):</span>
+    <span class="k">pass</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>arg</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-data docutils literal notranslate"><span class="pre">Callable</span></code>[…, ~ReturnType], <code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>]) – the callable or number of runs</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><code class="xref py py-data docutils literal notranslate"><span class="pre">Callable</span></code>[…, ~ReturnType]</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="module-devhelpers.nogc">
+<span id="nogc"></span><h2>NoGC<a class="headerlink" href="#module-devhelpers.nogc" title="Permalink to this headline">¶</a></h2>
+<dl class="py function">
+<dt id="devhelpers.nogc.nogc">
+<code class="sig-prename descclassname"><span class="pre">devhelpers.nogc.</span></code><code class="sig-name descname"><span class="pre">nogc</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">func</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/devhelpers/nogc.html#nogc"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#devhelpers.nogc.nogc" title="Permalink to this definition">¶</a></dt>
+<dd><p>Use the decorator to disable the garbage collector for a function.</p>
+<p>The garbage collector runs frequently to remove unreachable objects
+from memory. While running the <code class="docutils literal notranslate"><span class="pre">&#64;timeit</span></code> decorator, to time functions
+it might be beneficial to disable the garbage collector.</p>
+<p class="rubric">Notes</p>
+<p>By disabling the garbage collector, dangling object remain in memory until
+the garbage collector is re-enabled and the garbage is freed.</p>
+<p>If you are sure, you don’t have a “leaking” function, this might not be a
+problem. But if the program is “leaky”, and you use e.g. the <code class="docutils literal notranslate"><span class="pre">timeit</span></code>
+decorator, each cycle new objects are created but never freed.</p>
+<p>Make sure you understand the reference counter and the garbage collector
+to not use this decorator for the wrong reasons.</p>
+<p class="rubric">Examples</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nd">@nogc</span>
+<span class="nd">@timeit</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">foo</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+    <span class="k">pass</span>
+
+<span class="nd">@nogc</span>
+<span class="nd">@timeit</span>
+<span class="k">def</span> <span class="nf">bar</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="n">d</span><span class="p">):</span>
+    <span class="k">pass</span>
+
+<span class="nd">@nogc</span>
+<span class="k">def</span> <span class="nf">baz</span><span class="p">():</span>
+    <span class="k">assert</span> <span class="ow">not</span> <span class="n">gc</span><span class="o">.</span><span class="n">isenabled</span><span class="p">()</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><code class="xref py py-data docutils literal notranslate"><span class="pre">Callable</span></code>[…, ~ReturnType]</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
 </div>
 
 
@@ -97,6 +173,8 @@ $ n+1 $ times.</p></li>
   <ul>
 <li><a class="reference internal" href="#">DevTools Documentation</a><ul>
 <li><a class="reference internal" href="#module-devhelpers.timeit">TimeIt</a></li>
+<li><a class="reference internal" href="#module-devhelpers.isatomic">IsAtomic</a></li>
+<li><a class="reference internal" href="#module-devhelpers.nogc">NoGC</a></li>
 </ul>
 </li>
 </ul>
