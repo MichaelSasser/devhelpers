@@ -9,7 +9,15 @@ TimeIt
    :undoc-members:
    :show-inheritance:
 
-TimeIt
+IsAtomic
+--------
+
+.. automodule:: devhelpers.isatomic
+   :members:
+   :undoc-members:
+   :show-inheritance:
+   
+NoGC
 ------
 
 .. automodule:: devhelpers.nogc
