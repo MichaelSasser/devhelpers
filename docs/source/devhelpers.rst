@@ -16,7 +16,7 @@ IsAtomic
    :members:
    :undoc-members:
    :show-inheritance:
-   
+
 NoGC
 ------
 
