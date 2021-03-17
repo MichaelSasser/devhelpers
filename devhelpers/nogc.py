@@ -16,15 +16,11 @@
 import gc
 
 from functools import wraps
-from itertools import repeat
-from sys import float_info
-from time import time
 from typing import Any
 from typing import Callable
 from typing import Dict
 from typing import List
 from typing import TypeVar
-from typing import Union
 
 
 __author__: str = "Michael Sasser"
@@ -72,6 +68,7 @@ def nogc(func: Callable[..., ReturnType]) -> Callable[..., ReturnType]:
        @nogc
        def baz():
            assert not gc.isenabled()
+
     """
 
     @wraps(func)

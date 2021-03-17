@@ -18,8 +18,8 @@ from __future__ import annotations
 
 import gc
 
-from devhelpers.timeit import timeit
 from devhelpers.nogc import nogc
+from devhelpers.timeit import timeit
 
 
 @nogc
