@@ -14,6 +14,8 @@ It is not made to be included or used in a finished product.
 - The `isatomic` decorator runs a function multiple times and compares
   the return value against the first run. If the output changes, the
   decorator raises an error.
+- The `@nogc` decorator disables the garbage collector during the runtime
+  of a function.
 
 ## Semantic Versioning
 

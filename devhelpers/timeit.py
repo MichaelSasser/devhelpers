@@ -110,3 +110,6 @@ def timeit(
         n = arg
         return timeit_  # type: ignore
     return timeit_(arg)
+
+
+# vim: set ft=python :

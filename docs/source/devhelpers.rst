@@ -16,3 +16,11 @@ IsAtomic
    :members:
    :undoc-members:
    :show-inheritance:
+   
+NoGC
+------
+
+.. automodule:: devhelpers.nogc
+   :members:
+   :undoc-members:
+   :show-inheritance:
