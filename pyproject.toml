@@ -16,7 +16,7 @@
 
 [tool.poetry]
 name = "devhelpers"
-version = "0.1.1"
+version = "0.1.2"
 description = "A Development Toolbox"
 license = "GPL-3.0-or-later"
 authors = ["Michael Sasser <Michael@MichaelSasser.org>"]
