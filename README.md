@@ -11,6 +11,8 @@ It is not made to be included or used in a finished product.
 - The `@timeit` decorator to time the runtime of a function or method.
   With `@timit(1000)` the function or method will be timed 1000 times
   and prints afterword a small statistic.
+- The `@nogc` decorator disables the garbage collector during the runtime
+  of a function.
 
 ## Semantic Versioning
 
