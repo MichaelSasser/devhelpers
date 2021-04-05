@@ -57,7 +57,7 @@ docs = ["sphinx", "sphinx-autodoc-typehints", "numpydoc"]
 
 [tool.poetry.dev-dependencies]
 pre-commit = "^2.10.1"
-pytest = "^6.2.2"
+pytest = "^6.2.3"
 pytest-cov = "^2.11.1"
 pytest-instafail = "^0.4.2"
 pytest-xdist = { version = "^2.2.1", extras = ["psutil"] }
