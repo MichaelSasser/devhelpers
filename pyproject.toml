@@ -71,7 +71,7 @@ vulture = "^2.3"
 mypy = "^0.812"
 isort = "^5.8.0"
 python-language-server = { version = "^0.36.2", extras = ["all"] }
-black = "^21.5b0"
+black = "^21.5b1"
 
 
 [tool.black]
