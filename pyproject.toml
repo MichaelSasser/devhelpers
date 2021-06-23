@@ -68,7 +68,7 @@ pylint = "^2.8.3"
 pycodestyle = "^2.6.0"
 yapf = "^0.31.0"
 vulture = "^2.3"
-mypy = "^0.902"
+mypy = "^0.910"
 isort = "^5.9.1"
 python-language-server = { version = "^0.36.2", extras = ["all"] }
 black = "^21.6b0"
