@@ -19,7 +19,7 @@
 Contributer Documentation
 *************************
 
-First off, thank you for considering contributing to DevHelpers. Please make 
+First off, thank you for considering contributing to DevHelpers. Please make
 sure to read our Code of Conduct before you start Contributing to DevHelpers.
 
 .. include::  coc.rst
@@ -78,7 +78,7 @@ Add a feature
    ``upstream`` (the original repository) to your local repository and start
    over again from ``5.``. Don't forget to create an issue first.
 
-.. note:: Do not add any additional requirement without an approval first. 
+.. note:: Do not add any additional requirement without an approval first.
 
 .. note:: If you have any questions feel free to ask in the issues, pull
           requests and discussions.
