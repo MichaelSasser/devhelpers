@@ -1,16 +1,28 @@
-DevTools Documentation
-======================
+DevHelpers Documentation
+========================
 
-DevTools (or ``devhelpers``) is a loose collection of python development
-helpers.
+.. include::  preface.rst
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
+   :titlesonly:
    :caption: Contents:
 
-   devhelpers
+   installation
+   contributer_documentation/index
+   changelog
 
-.. warning:: It is not made to be included or used in a finished product.
+.. warning:: DevHelpers is not intended to be used in a final product.
+
+Branching Model
+^^^^^^^^^^^^^^^
+
+.. include::  branching_model.rst
+
+Semantic Versioning
+^^^^^^^^^^^^^^^^^^^
+
+.. include::  semantic_versioning.rst
 
 Indices & Tables
 ==================
@@ -18,3 +30,8 @@ Indices & Tables
 * :ref:`genindex`
 * :ref:`modindex`
 * :ref:`search`
+
+License
+=======
+
+.. include::  license_short.rst

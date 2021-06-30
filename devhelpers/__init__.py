@@ -14,7 +14,22 @@
 #
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
+# flake8: noqa
+# pylint: disable:undefined-variable
+
+"""DevHelpers is a loose collection of python development helpers."""
+
 from __future__ import annotations
 
+from pathlib import Path
+
+from single_source import get_version
+
+
+__author__: str = "Michael Sasser"
+__email__: str = "Michael@MichaelSasser.org"
+__version__: str = (
+    get_version(__name__, Path(__file__).parent.parent) or "Unknown"
+)
 
 # vim: set ft=python :
