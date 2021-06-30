@@ -18,7 +18,7 @@ from __future__ import annotations
 
 import re
 
-from devhelpers.__version__ import __version__
+from devhelpers import __version__
 
 
 __author__: str = "Michael Sasser"

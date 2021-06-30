@@ -1,5 +1,4 @@
-#!/usr/bin/env python
-# devhelpers - A Development Toolbox
+# devhelpers
 # Copyright (c) 2021  Michael Sasser <Michael@MichaelSasser.org>
 #
 # This program is free software: you can redistribute it and/or modify
@@ -14,14 +13,30 @@
 #
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
-from __future__ import annotations
 
-from pkg_resources import get_distribution
+---
 
+codecov:
+  require_ci_to_pass: yes
+  max_report_age: 24
 
-__author__: str = "Michael Sasser"
-__email__: str = "Michael@MichaelSasser.org"
+coverage:
+  precision: 2
+  round: down
+  range: "95...100"
 
-__version__ = get_distribution("devhelpers").version
+parsers:
+  gcov:
+    branch_detection:
+      conditional: yes
+      loop: yes
+      method: no
+      macro: no
 
-# vim: set ft=python :
+comment:
+  layout: "reach,diff,flags,files,footer"
+  behavior: default
+  require_changes: no
+
+github_checks:
+  annotations: true
