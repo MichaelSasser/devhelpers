@@ -9,7 +9,7 @@ Bug fixes and new features should include documentation and tests.
 
 fixes #
 
-#### Affected Handlers
+#### Affected Modules
 <!-- Please provide affected handlers. -->
 
 #### Description of Change
