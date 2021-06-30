@@ -9,8 +9,8 @@ Bug fixes and new features should include documentation and tests.
 
 fixes #
 
-#### Affected Modules
-<!-- Please provide affected handlers. -->
+#### Affected Tools
+<!-- Please provide affected Tools. -->
 
 #### Description of Change
 <!-- Please provide a description of the change here. -->
@@ -31,6 +31,8 @@ fixes #
 - [ ] (*) Did you ran `tox` and everything passed?
 - [ ] (*) I haven't added any dependencie without approval.
 
+<!-- [Code of Conduct & Contribution Guidlines](https://devhelpers.rtfd.io/en/latest/contributer_documentation/index.html). -->
 I have read and accept the:
 
 - [ ] (*) Code of Conduct.
+- [ ] (*) Contribution Guidelines.
