@@ -80,7 +80,7 @@ def timeit(
             # Runner
             for _ in repeat(None, n):
                 t_start: float = time()
-                result: Any = func(*args, **kwargs)  # type: ignore
+                result: Any = func(*args, **kwargs)
                 t_stop: float = time()
                 dt: float = t_stop - t_start
                 min_ = min(dt, min_)

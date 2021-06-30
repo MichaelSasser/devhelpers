@@ -16,6 +16,8 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 from __future__ import annotations
 
+from _pytest.capture import CaptureFixture
+
 from devhelpers.timeit import timeit
 
 
@@ -35,12 +37,12 @@ def setup_1(a: int, b: int) -> int:
     return c
 
 
-def test_timeit_no_interfearence_100():
+def test_timeit_no_interfearence_100() -> None:
     # Setup
     desired: int = 30
 
     # Exercise
-    actual: int = setup_100(1, 2)
+    actual: int = setup_100(1, 2)  # type: ignore
 
     # Verify
     assert actual == desired
@@ -48,7 +50,7 @@ def test_timeit_no_interfearence_100():
     # Cleanup - None
 
 
-def test_timeit_no_interfearence_1():
+def test_timeit_no_interfearence_1() -> None:
     # Setup
     desired: int = 30
 
@@ -61,14 +63,14 @@ def test_timeit_no_interfearence_1():
     # Cleanup - None
 
 
-def test_timeit_has_output_100(capsys):
+def test_timeit_has_output_100(capsys: CaptureFixture) -> None:
     # Setup
     # desired = "TimeIt: setup_1(args=(1, 2), kwargs={}) took"
     desired: str = (
         "TimeIt: setup_100(args=(1, 2), kwargs={}) ran 100 times "
         "and took: total ="
     )
-    setup_100(1, 2)
+    setup_100(1, 2)  # type: ignore
 
     # Exercise
 
@@ -81,7 +83,7 @@ def test_timeit_has_output_100(capsys):
     # Cleanup - None
 
 
-def test_timeit_has_output_1(capsys):
+def test_timeit_has_output_1(capsys: CaptureFixture) -> None:
     # Setup
     desired: str = "TimeIt: setup_1(args=(1, 2), kwargs={}) took"
 

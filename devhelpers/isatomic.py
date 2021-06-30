@@ -73,7 +73,7 @@ def isatomic(
             result_1: Any = func(*args, **kwargs)
 
             for i in range(2, n + 1):
-                result_n: Any = func(*args, **kwargs)  # type: ignore
+                result_n: Any = func(*args, **kwargs)
                 if result_n != result_1:
                     raise NotAtomicError(result_1, result_n, i)
 

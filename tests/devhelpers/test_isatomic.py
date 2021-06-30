@@ -46,7 +46,7 @@ def setup_2_fail() -> int:
     return tests
 
 
-def test_isatomic_100_fail_99():
+def test_isatomic_100_fail_99() -> None:
     # Setup
     desired: str = (
         "The function is not atomic! This was confirmed during iteration 99. "
@@ -57,7 +57,7 @@ def test_isatomic_100_fail_99():
 
     # Exercise
     with pytest.raises(NotAtomicError) as excinfo:
-        setup_100(7, 42)
+        setup_100(7, 42)  # type: ignore
     actual = str(excinfo.value)
 
     # Verify
@@ -68,7 +68,7 @@ def test_isatomic_100_fail_99():
     tests = 0
 
 
-def test_isatomic_2():
+def test_isatomic_2() -> None:
     # Setup
     desired: int = 49
 
@@ -81,7 +81,7 @@ def test_isatomic_2():
     # Cleanup - None
 
 
-def test_isatomic_2_fail():
+def test_isatomic_2_fail() -> None:
     desired: str = (
         "The function is not atomic! This was confirmed during iteration 2. "
         'The return value of the first iteratrion was "1". The result of '

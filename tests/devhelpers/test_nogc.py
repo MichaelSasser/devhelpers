@@ -18,6 +18,8 @@ from __future__ import annotations
 
 import gc
 
+from _pytest.capture import CaptureFixture
+
 from devhelpers.nogc import nogc
 from devhelpers.timeit import timeit
 
@@ -36,7 +38,7 @@ def setup_1(a: int, b: int) -> int:
     return c
 
 
-def test_nogc_is_disabled():
+def test_nogc_is_disabled() -> None:
     # Setup
     desired: bool = True
 
@@ -50,7 +52,7 @@ def test_nogc_is_disabled():
     # Cleanup - None
 
 
-def test_nogc_no_interfearence_1():
+def test_nogc_no_interfearence_1() -> None:
     # Setup
     desired: int = 30
 
@@ -63,7 +65,7 @@ def test_nogc_no_interfearence_1():
     # Cleanup - None
 
 
-def test_nogc_has_output_1(capsys):
+def test_nogc_has_output_1(capsys: CaptureFixture) -> None:
     # Setup
     desired: str = "TimeIt: setup_1(args=(1, 2), kwargs={}) took"
 
