@@ -74,7 +74,7 @@ vulture = "^2.3"
 mypy = "^0.910"
 towncrier = "^21.3.0"
 isort = "^5.9.3"
-black = "^21.8b0"
+black = "^21.9b0"
 tox = "^3.24.3"
 types-pkg-resources = "^0.1.3"
 
