@@ -75,7 +75,7 @@ mypy = "^0.910"
 towncrier = "^21.3.0"
 isort = "^5.10.1"
 black = "^21.12b0"
-tox = "^3.24.4"
+tox = "^3.24.5"
 types-pkg-resources = "^0.1.3"
 
 
