@@ -1094,21 +1094,6 @@ py = "*"
 pytest = ">=3.10"
 
 [[package]]
-name = "pytest-instafail"
-version = "0.4.2"
-description = "pytest plugin to show failures instantly"
-category = "dev"
-optional = false
-python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*"
-files = [
-    {file = "pytest-instafail-0.4.2.tar.gz", hash = "sha256:19273fdf3f0f9a1cb4b7a0bc8aa1bdaaf6b0f62a681b693d5eca4626abc99782"},
-    {file = "pytest_instafail-0.4.2-py2.py3-none-any.whl", hash = "sha256:1ec440a177be89a9ed2759dade8e1f7a2b95bac74ae81dc91318d309bf4ebd4f"},
-]
-
-[package.dependencies]
-pytest = ">=2.9"
-
-[[package]]
 name = "pytest-xdist"
 version = "2.5.0"
 description = "pytest xdist plugin for distributed testing and loop-on-failing modes"
@@ -1714,4 +1699,4 @@ docs = ["numpydoc", "sphinx", "sphinx-autodoc-typehints", "sphinx_rtd_theme", "s
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.10"
-content-hash = "3677118cb320f0640a541ff2235275201a714788094513d2ed95c90ebe2c9ae9"
+content-hash = "427713c1c1a735909b1b1bb0317483756b384ddc3b2fedb2d815359edbdf7fbe"

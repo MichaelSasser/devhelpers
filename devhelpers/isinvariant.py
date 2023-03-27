@@ -32,9 +32,9 @@ ReturnType = TypeVar("ReturnType")
 class NotInvariantError(Exception):
     def __init__(self, result_1: Any, result_n: Any, iteration: int):
         msg: str = (
-            "The function is not invariant! This was confirmed during iteration "
-            f"{iteration}. The return value of the first iteratrion was "
-            f'"{result_1}". The result of iteration {iteration} is '
+            "The function is not invariant! This was confirmed during "
+            f"iteration {iteration}. The return value of the first iteratrion "
+            f'was "{result_1}". The result of iteration {iteration} is '
             f'"{result_n}".'
         )
         super().__init__(msg)
