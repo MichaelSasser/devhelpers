@@ -59,7 +59,7 @@ sphinx_rtd_theme = { version = ">=0.5.2,<1.1.0", optional = true }
 docs = ["sphinx", "sphinx_rtd_theme", "sphinx-autodoc-typehints", "numpydoc", "sphinxcontrib-programoutput"]
 
 [tool.poetry.dev-dependencies]
-pre-commit = "^2.16.0"
+pre-commit = "^3.2.1"
 pytest = "^6.2.5"
 pytest-cov = "^3.0.0"
 pytest-instafail = "^0.4.2"
