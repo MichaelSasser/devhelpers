@@ -28,18 +28,17 @@ from datetime import date
 from pathlib import Path
 from typing import List
 
-from single_source import get_version
+# skipcq: FLK-E402
+from devhelpers.package_version import get_version  # noqa: E402
 
-
-__version__: str = (
-    get_version(__name__, Path(__file__).parent.parent) or "Unknown"
-)
 
 sys.path.insert(0, os.path.abspath("../"))
 sys.path.insert(0, os.path.abspath("../.."))
 
-# RUN: sphinx-apidoc -o source/ ../ds2000 --force
-# to add changes to the docs
+
+__version__: str = (
+    get_version("devhelpers", Path(__file__).parent) or "Unknown"
+)
 
 # -- Project information -----------------------------------------------------
 
@@ -102,7 +101,7 @@ numpydoc_show_class_members: bool = False
 numpydoc_xref_param_type: bool = True
 
 # Report warnings for all validation checks
-numpydoc_validation_checks = {"all"}
+# numpydoc_validation_checks = {"all"}
 
 # generate autosummary even if no references
 autosummary_generate: bool = True

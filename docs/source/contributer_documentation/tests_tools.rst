@@ -28,10 +28,10 @@ TimeIt
    :undoc-members:
    :show-inheritance:
 
-IsAtomic
---------
+IsInvariant
+-----------
 
-.. automodule:: tests.devhelpers.test_isatomic
+.. automodule:: tests.devhelpers.test_isinvariant
    :members:
    :undoc-members:
    :show-inheritance:

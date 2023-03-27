@@ -29,53 +29,60 @@ keywords = ['devtools', 'development', 'tools']
 # Look here for all Classifiers:
 # https://pypi.python.org/pypi?%3Aaction=list_classifiers
 classifiers = [
-    # 'Development Status :: 3 - Alpha',
-    "Development Status :: 2 - Pre-Alpha",
-    "Intended Audience :: Developers",
-    "Natural Language :: English",
-    "Operating System :: OS Independent",
-    "Programming Language :: Python :: 3 :: Only",
-    "Programming Language :: Python :: 3.9",
-    "Topic :: Software Development",
-    "Topic :: Software Development :: Libraries :: Python Modules",
-    "Topic :: Software Development :: Quality Assurance",
-    "Topic :: Software Development :: Testing",
-    "Typing :: Typed",
-    "License :: OSI Approved :: GNU General Public License v3 or later (GPLv3+)",
+  # 'Development Status :: 3 - Alpha',
+  "Development Status :: 2 - Pre-Alpha",
+  "Intended Audience :: Developers",
+  "Natural Language :: English",
+  "Operating System :: OS Independent",
+  "Programming Language :: Python :: 3 :: Only",
+  "Programming Language :: Python :: 3.9",
+  "Topic :: Software Development",
+  "Topic :: Software Development :: Libraries :: Python Modules",
+  "Topic :: Software Development :: Quality Assurance",
+  "Topic :: Software Development :: Testing",
+  "Typing :: Typed",
+  "License :: OSI Approved :: GNU General Public License v3 or later (GPLv3+)",
 ]
 
 [tool.poetry.dependencies]
-python = "^3.8"
-single-source = "^0.2.0"
+python = "^3.10"
 
 # Docs
-sphinx = { version = ">=3.5.1,<5.0.0", optional = true }
-sphinx-autodoc-typehints = { version = "^1.12.0", optional = true }
-sphinxcontrib-programoutput = { version = ">=0.16,<0.18", optional = true }
-numpydoc = { version = "^1.1.0", optional = true }
-sphinx_rtd_theme = { version = ">=0.5.2,<1.1.0", optional = true }
+sphinx = { version = "^5.3.0", optional = true }
+sphinx-autodoc-typehints = { version = "^1.22", optional = true }
+sphinxcontrib-programoutput = { version = "^0.17", optional = true }
+numpydoc = { version = "^1.5.0", optional = true }
+sphinx_rtd_theme = { version = "^1.2.0", optional = true }
 
 [tool.poetry.extras]
-docs = ["sphinx", "sphinx_rtd_theme", "sphinx-autodoc-typehints", "numpydoc", "sphinxcontrib-programoutput"]
+docs = [
+  "sphinx",
+  "sphinx_rtd_theme",
+  "sphinx-autodoc-typehints",
+  "numpydoc",
+  "sphinxcontrib-programoutput",
+]
 
 [tool.poetry.dev-dependencies]
-pre-commit = "^2.16.0"
-pytest = "^6.2.5"
+pre-commit = "^3.2.1"
+pytest = "^7.2.2"
 pytest-cov = "^3.0.0"
-pytest-instafail = "^0.4.2"
 pytest-xdist = { version = "^2.5.0", extras = ["psutil"] }
-flake8 = "^3.8.4"
-neovim = "^0.3.1"
-pydocstyle = "^6.1.1"
-pylint = "^2.12.2"
-pycodestyle = "^2.6.0"
+flake8 = "^6.0.0"
+pydocstyle = "^6.3.0"
+pylint = "^2.17.1"
+pycodestyle = "^2.10.0"
 yapf = "^0.32.0"
-vulture = "^2.3"
-mypy = "^0.910"
-towncrier = "^21.3.0"
-isort = "^5.10.1"
-black = "^21.12b0"
-tox = "^3.24.4"
+vulture = "^2.7"
+mypy = "^1.1.1"
+interrogate = "^1.5.0"
+towncrier = "^22.12.0"
+tox = "^4.4.8"
+isort = { version = "^5.12.0", extras = ["pyproject"] }
+black = { version = "^23.1.0", allow-prereleases = true }
+flake8-bugbear = "^23.3.23"
+
+# typesheds
 types-pkg-resources = "^0.1.3"
 
 
@@ -112,7 +119,7 @@ ignore-magic = true
 # ignore-private = false
 # ignore-property-decorators = false
 # ignore-module = false
-fail-under = 1  # TODO: Docs
+fail-under = 1                          # TODO: Docs
 exclude = ["setup.py", "docs", "build"]
 # ignore-regex = ["^get$", "^mock_.*", ".*BaseClass.*"]
 verbose = 1
@@ -142,12 +149,21 @@ lines_after_imports = 2
 lines_between_types = 1
 multi_line_output = 3
 use_parentheses = true
-skip_glob = ["*/setup.py", "*.rst", "*.md", "*.yaml", "*.txt", "*.yml", "*.lock", "*.toml", "*.ini", "Makefile"]
+skip_glob = [
+  "*/setup.py",
+  "*.rst",
+  "*.md",
+  "*.yaml",
+  "*.txt",
+  "*.yml",
+  "*.lock",
+  "*.toml",
+  "*.ini",
+  "Makefile",
+]
 filter_files = true
 known_first_party = "devhelpers"
-known_third_party = [
-    "pytest",
-]
+known_third_party = ["pytest"]
 
 [tool.vulture]
 make_whitelist = true
@@ -162,45 +178,45 @@ filename = "CHANGELOG.rst"
 issue_format = "`#{issue} <https://github.com/MichaelSasser/devhelpers/issues/{issue}>`_"
 directory = "news/"
 top_line = false
-title_format = "{version} ({project_date})"  # {name}
-all_bullets = true  # make all fragments bullet points
-wrap = true  # Wrap text to 79 characters
+title_format = "{version} ({project_date})"                                               # {name}
+all_bullets = true                                                                        # make all fragments bullet points
+wrap = true                                                                               # Wrap text to 79 characters
 template = "news/templates/default.rst"
 
-  [[tool.towncrier.type]]
-  directory = "breaking"
-  name = "Behavior & Breaking Changes"
-  showcontent = true
+[[tool.towncrier.type]]
+directory = "breaking"
+name = "Behavior & Breaking Changes"
+showcontent = true
 
-  [[tool.towncrier.type]]
-  directory = "feature"
-  name = "Features & Improvements"
-  showcontent = true
+[[tool.towncrier.type]]
+directory = "feature"
+name = "Features & Improvements"
+showcontent = true
 
-  [[tool.towncrier.type]]
-  directory = "bugfix"
-  name = "Bugfixes"
-  showcontent = true
+[[tool.towncrier.type]]
+directory = "bugfix"
+name = "Bugfixes"
+showcontent = true
 
-  [[tool.towncrier.type]]
-  directory = "docs"
-  name = "Improved Documentation"
-  showcontent = true
+[[tool.towncrier.type]]
+directory = "docs"
+name = "Improved Documentation"
+showcontent = true
 
-  [[tool.towncrier.type]]
-  directory = "removal"
-  name = "Removals & Deprecations"
-  showcontent = true
+[[tool.towncrier.type]]
+directory = "removal"
+name = "Removals & Deprecations"
+showcontent = true
 
-  [[tool.towncrier.type]]
-  directory = "trivial"
-  name = "Trivial Changes"
-  showcontent = false
+[[tool.towncrier.type]]
+directory = "trivial"
+name = "Trivial Changes"
+showcontent = false
 
-  [[tool.towncrier.type]]
-  directory = "misc"
-  name = "Miscellaneous"
-  showcontent = true
+[[tool.towncrier.type]]
+directory = "misc"
+name = "Miscellaneous"
+showcontent = true
 
 
 [build-system]
@@ -223,12 +239,11 @@ filterwarnings =
 # Keep docs in sync with docs env and .readthedocs.yml.
 # [gh-actions]
 # python =
-#     3.9: py39, precommit, changelog, docs
-# # 3.10: py310
+#     3.10: py310, precommit, changelog, docs
 
 
 [tox]
-envlist = precommit,py39,docs,changelog,
+envlist = precommit,py310,docs,changelog,
 # py310,
 isolated_build = True
 
@@ -243,11 +258,11 @@ extras = {env:TOX_AP_TEST_EXTRAS:tests}
 commands = poetry run pytest {posargs}
 
 
-[testenv:py39]
+[testenv:py310]
 allowlist_externals = poetry
 # Python 3.6+ has a number of compile-time warnings on invalid string escapes.
 # PYTHONWARNINGS=d and --no-compile below make them visible during the Tox run.
-basepython = python3.9
+basepython = python3.10
 install_command = pip install --no-compile {opts} {packages}
 setenv =
     PYTHONWARNINGS=d
@@ -257,7 +272,7 @@ commands = poetry run coverage run -m pytest {posargs}
 
 [testenv:precommit]
 allowlist_externals = poetry
-basepython = python3.9
+basepython = python3.10
 skip_install = true
 deps =
     pre-commit
@@ -269,7 +284,7 @@ commands =
 [testenv:docs]
 allowlist_externals = poetry
 # Keep basepython in sync with gh-actions and .readthedocs.yml.
-basepython = python3.9
+basepython = python3.10
 # extras = docs, func
 # currently disable -n
 commands =
@@ -280,7 +295,7 @@ commands =
 
 [testenv:changelog]
 allowlist_externals = poetry
-basepython = python3.9
+basepython = python3.10
 # deps = towncrier
 skip_install = true
 commands = poetry run towncrier --draft

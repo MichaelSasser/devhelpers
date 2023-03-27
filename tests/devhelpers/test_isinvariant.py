@@ -18,14 +18,14 @@ from __future__ import annotations
 
 import pytest
 
-from devhelpers.isatomic import NotAtomicError
-from devhelpers.isatomic import isatomic
+from devhelpers.isinvariant import NotInvariantError
+from devhelpers.isinvariant import isinvariant
 
 
 tests: int = 0  # store the number of tests
 
 
-@isatomic(100)
+@isinvariant(100)
 def setup_100(a: int, b: int) -> int:
     global tests
     tests += 1
@@ -34,29 +34,29 @@ def setup_100(a: int, b: int) -> int:
     return a + b
 
 
-@isatomic
+@isinvariant
 def setup_2(a: int, b: int) -> int:
     return a + b
 
 
-@isatomic
+@isinvariant
 def setup_2_fail() -> int:
     global tests
     tests += 1
     return tests
 
 
-def test_isatomic_100_fail_99() -> None:
+def test_isinvariant_100_fail_99() -> None:
     # Setup
     desired: str = (
-        "The function is not atomic! This was confirmed during iteration 99. "
-        'The return value of the first iteratrion was "49". The result of '
-        'iteration 99 is "-1".'
+        "The function is not invariant! This was confirmed during iteration "
+        '99. The return value of the first iteratrion was "49". The result '
+        'of iteration 99 is "-1".'
     )
     actual: str = "ChangedLater"
 
     # Exercise
-    with pytest.raises(NotAtomicError) as excinfo:
+    with pytest.raises(NotInvariantError) as excinfo:
         setup_100(7, 42)  # type: ignore
     actual = str(excinfo.value)
 
@@ -68,7 +68,7 @@ def test_isatomic_100_fail_99() -> None:
     tests = 0
 
 
-def test_isatomic_2() -> None:
+def test_isinvariant_2() -> None:
     # Setup
     desired: int = 49
 
@@ -81,16 +81,16 @@ def test_isatomic_2() -> None:
     # Cleanup - None
 
 
-def test_isatomic_2_fail() -> None:
+def test_isinvariant_2_fail() -> None:
     desired: str = (
-        "The function is not atomic! This was confirmed during iteration 2. "
-        'The return value of the first iteratrion was "1". The result of '
+        "The function is not invariant! This was confirmed during iteration "
+        '2. The return value of the first iteratrion was "1". The result of '
         'iteration 2 is "2".'
     )
     actual: str = "ChangedLater"
 
     # Exercise
-    with pytest.raises(NotAtomicError) as excinfo:
+    with pytest.raises(NotInvariantError) as excinfo:
         setup_2_fail()
     actual = str(excinfo.value)
 

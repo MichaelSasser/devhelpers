@@ -29,10 +29,10 @@ __email__: str = "Michael@MichaelSasser.org"
 ReturnType = TypeVar("ReturnType")
 
 
-class NotAtomicError(Exception):
+class NotInvariantError(Exception):
     def __init__(self, result_1: Any, result_n: Any, iteration: int):
         msg: str = (
-            "The function is not atomic! This was confirmed during iteration "
+            "The function is not invariant! This was confirmed during iteration "
             f"{iteration}. The return value of the first iteratrion was "
             f'"{result_1}". The result of iteration {iteration} is '
             f'"{result_n}".'
@@ -40,24 +40,24 @@ class NotAtomicError(Exception):
         super().__init__(msg)
 
 
-def isatomic(
+def isinvariant(
     arg: Union[Callable[..., ReturnType], int]
 ) -> Callable[..., ReturnType]:
-    """Use the decorator to check if a function is atomic.
+    """Use the decorator to check if a function is invariant to previous runs.
 
     The decorator runs a function over and over again and compares the output.
-    When the output changes, it raises a `NotAtomicError`.
+    When the output changes, it raises a `NotInvariantError`.
 
     Examples
     --------
     .. code-block:: python
 
-       @isatomic(100)
+       @isinvariant(100)
        def foo(a, b):
            pass
 
 
-       @isatomic
+       @isinvariant
        def bar(c, d):
            pass
 
@@ -65,7 +65,7 @@ def isatomic(
 
     """
 
-    def isatomic_(
+    def isinvariant_(
         func: Callable[..., ReturnType]
     ) -> Callable[..., ReturnType]:
         @wraps(func)
@@ -75,19 +75,19 @@ def isatomic(
             for i in range(2, n + 1):
                 result_n: Any = func(*args, **kwargs)
                 if result_n != result_1:
-                    raise NotAtomicError(result_1, result_n, i)
+                    raise NotInvariantError(result_1, result_n, i)
 
             return result_1
 
         return wrapper
 
-    # arg can be func, if no n provided. -> @isatomic
-    # arg can be n, if n provided. -> @isatomic(100)
+    # arg can be func, if no n provided. -> @isinvariant
+    # arg can be n, if n provided. -> @isinvariant(100)
     n = 2
     if isinstance(arg, int):
         n = arg
-        return isatomic_  # type: ignore
-    return isatomic_(arg)
+        return isinvariant_  # type: ignore
+    return isinvariant_(arg)
 
 
 # vim: set ft=python :
