@@ -1475,14 +1475,14 @@ dev = ["furo", "packaging", "sphinx (>=5)", "twisted"]
 
 [[package]]
 name = "tox"
-version = "4.5.2"
+version = "4.6.0"
 description = "tox is a generic virtualenv management and test command line tool"
 category = "dev"
 optional = false
 python-versions = ">=3.7"
 files = [
-    {file = "tox-4.5.2-py3-none-any.whl", hash = "sha256:f1a9541b292aa0449f6c7bb67dc0073f25f9086413c3922fe47f5168cbf7b2f4"},
-    {file = "tox-4.5.2.tar.gz", hash = "sha256:ad87fb7a10ef476afb6eb7e408808057f42976ef0d30ad5fe023099ba493ce58"},
+    {file = "tox-4.6.0-py3-none-any.whl", hash = "sha256:4874000453e637a87ca892f9744a2ab9a7d24064dad1b0ecbf5a4c3c146cc732"},
+    {file = "tox-4.6.0.tar.gz", hash = "sha256:954f1f647f67f481d239a193288983242a6152b67503c4a56b19a4aafaa29736"},
 ]
 
 [package.dependencies]
@@ -1684,4 +1684,4 @@ docs = ["sphinx", "sphinx_rtd_theme", "sphinx-autodoc-typehints", "numpydoc", "s
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.10"
-content-hash = "1242a4421e6cb5c270e9277ce2839e5ce4f4bc387d7df342e15e768bec1ce9de"
+content-hash = "798d9eba2fd7b5c1ac6b29bee0484c5791dae31f1c610c0e2dbadbcc9b031e51"
