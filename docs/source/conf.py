@@ -21,20 +21,17 @@
 
 from __future__ import annotations
 
-import os
 import sys
 
 from datetime import date
 from pathlib import Path
 from typing import List
 
+sys.path.insert(0, str(Path("../").resolve()))
+sys.path.insert(0, str(Path("../..").resolve()))
+
 # skipcq: FLK-E402
 from devhelpers.package_version import get_version  # noqa: E402
-
-
-sys.path.insert(0, os.path.abspath("../"))
-sys.path.insert(0, os.path.abspath("../.."))
-
 
 __version__: str = (
     get_version("devhelpers", Path(__file__).parent) or "Unknown"
